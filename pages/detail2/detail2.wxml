@@ -1,0 +1,66 @@
+<view class="page">  
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                    <view class="weui-flex__item">
+                          <view class='weui-flex_box box_left'>{{item.name}}(共{{item.count}}人)</view>
+                          <view class='weui-flex_box box_left'>{{item.activity}}</view>
+                    </view>
+                     <view class="weui-flex__item">
+                          <view class='weui-flex_box box_right' style='font-weight:bold'>¥ {{item.cash}}</view>
+                          <view class='weui-flex_box box_right'>{{item.timer}}</view>
+                    </view>
+
+               
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class=" weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                            <block>
+                           
+                                <view class="head_portrait portrait">
+                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
+                                  <text class='portrait_name'>姓名</text>
+                                </view>
+                                 <view class="head_portrait portrait">
+                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
+                                  <text class='portrait_name'>姓名</text>
+                                </view>
+                                <view class="head_portrait portrait">
+                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
+                                  <text class='portrait_name'>姓名</text>
+                                </view>
+                                  <view class="head_portrait portrait">
+                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
+                                  <text class='portrait_name'>姓名</text>
+                                </view>
+                                  <view class="head_portrait portrait">
+                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
+                                  <text class='portrait_name'>姓名</text>
+                                </view>
+                                <view style='clear:both;margin-top:10rpx;text-align:center'>
+                                  <text>每人AA50元</text>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+        <navigator url="../../pages/newActivities/newActivities"  hover-class="weui-cell_active"> 
+          <view class='newAccount'>
+          <image class='accoutIcon' src="../../resource/iconfont/iconadd.png" />
+          <text class='accountText'>新的账目</text>
+          </view>
+        </navigator>
+        <navigator url="../../pages/results/results" class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">继续记账</button>         
+        </navigator>
+         <navigator class="page__bd page__bd_spacing">
+          
+          <button class="weui-btn" type="primary" disabled="true">开始计算</button>
+        </navigator>
+</view>

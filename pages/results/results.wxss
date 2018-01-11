@@ -1,0 +1,38 @@
+@import "../../weui.wxss";
+.results{
+  width: 100%;
+  height: auto;
+}
+.results_wrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top:20rpx;
+  box-sizing: border-box; 
+}
+.results_box{
+  flex: 1;
+  height: 160rpx;
+
+}
+.results_box_img{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx auto 0;
+  border-radius: 50%;
+}
+.results_box_name{
+  text-align: center;
+  font-size: 30rpx;
+  color: #000;
+
+}
+.results_box_arrow{
+  width: 100%;
+  height: 50rpx;
+  display: block;
+}
+ /* .results_box_money{
+width: 100%; height: 50rpx;line-height: 50rpx;font-size: 36rpx; text-align: center;margin-top:55rpx;background-image:url('../../resource/images/rightArrow.png');background-size:cover
+}  */

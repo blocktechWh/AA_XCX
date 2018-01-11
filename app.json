@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",  
+    "pages/user/user",
+    "pages/actions/actions",
+    "pages/detail/detail",
+    "pages/detail2/detail2",
+    "pages/newActivities/newActivities",
+    "pages/results/results"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4e8cee",
+    "navigationBarTitleText": "活动列表",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "yellow",
+    "selectedColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resource/iconfont/icon1.png",
+        "selectedIconPath": "resource/iconfont/icon2.png" 
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "resource/iconfont/icon3.png",
+        "selectedIconPath": "resource/iconfont/icon4.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "resource/iconfont/icon5.png",
+        "selectedIconPath": "resource/iconfont/icon6.png"
+      }
+    ]
+  }
+}

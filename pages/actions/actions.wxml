@@ -1,0 +1,38 @@
+<view class="page">  
+    <view class="page__bd">    
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">活动主题</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="一起聚餐吧"/>
+                </view>
+            </view>             
+        </view>
+        <view class='remark'>
+          备注：需先分享再记账，或通过以下方式。
+        </view>
+        <view class='remark1'>
+         微信分享
+        </view>
+        <view class="page__bd_spacing">
+          <button class="weui-btn" type="primary">微信分享</button>
+         </view>
+        <view class='remark1'>
+         扫一扫
+        </view>
+        <image class='qcode' src="" />
+        <view class='remark1'>
+         您的活动号
+        </view>
+    
+         <view class="box-room">
+            <view class="box-rooms"><text class="placeholder">1</text></view>
+            <view class="box-rooms border0"><text class="placeholder">2</text></view>
+            <view class="box-rooms border0"><text class="placeholder">3</text></view>
+            <view class="box-rooms border0"><text class="placeholder">4</text></view>
+        </view>
+       
+    </view>
+</view>

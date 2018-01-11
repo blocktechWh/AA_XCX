@@ -1,0 +1,108 @@
+/* pages/aaBook/books.wxss */
+@import "../../weui.wxss";
+/* page{
+  background-color: white;
+  padding-bottom: 150rpx;
+}
+.book-item {
+  height: 150rpx;
+  border: 2rpx solid #f1f1f1;
+}
+
+.book-item view:first-of-type, .book-item view:nth-child(2) {
+  height: 50%;
+}
+
+.book-item view:first-of-type view, .book-item view:nth-child(2) view {
+  display: inline-block;
+  height: 100%;
+  line-height: 75rpx;
+}
+
+.book-item view:first-of-type view:first-of-type,
+.book-item view:nth-child(2) view:first-of-type {
+  width: 300rpx;
+  padding-left: 34rpx;
+}
+
+.book-add {
+  display: flex;
+}
+
+.book-add>view {
+  margin: 20rpx auto;
+  display: inline-block;
+  height: 40rpx;
+}
+
+.bottom-buttons{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  height: 150rpx;
+  width:100%;
+}
+.bottom-buttons button{
+  width: 300rpx;
+  margin: 35rpx auto;
+  float: left;
+}
+.book-detail>view:first-of-type{
+  width: 100rpx;
+  float: left
+}
+.book-detail>view:nth-child(2){
+  float: left;
+}
+.book-detail>view:nth-child(2) view{
+  width: 50%;
+  float: left;
+} */
+.remark{
+  font-size: 32rpx;
+  background: #fff;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.remark1{
+  font-size: 38rpx;
+  
+  height: 100rpx;
+  line-height:100rpx;
+  
+ 
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.qcode{
+  width: 300rpx;
+  height: 300rpx;
+  display: block;
+  margin: 20rpx auto;
+  background: red;
+}
+.box-room{
+  width: 70%;
+  height: 100rpx;
+  display: flex;
+  margin: 50rpx auto;
+}
+
+.box-rooms{
+  flex: 1;
+  height: 100rpx;
+  text-align: center;
+  border: 1px solid #eee;
+}
+.border0{
+  border-left:none; 
+}
+.placeholder{
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+}

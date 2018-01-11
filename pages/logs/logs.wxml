@@ -1,0 +1,24 @@
+<!--logs.wxml-->
+<view class='box'>
+<view class='box1 box13'>
+  <view class='box-text2'>请输入活动号</view>
+ 
+     <view class="box-room">
+            <view class="box-rooms"><input class="placeholder"></input></view>
+            <view class="box-rooms border0"><input class="placeholder"></input></view>
+            <view class="box-rooms border0"><input class="placeholder"></input></view>
+            <view class="box-rooms border0"><input class="placeholder"></input></view>
+        </view>
+ 
+</view>
+<navigator class='box1 box11' url="../../pages/actions/actions">
+  <image class='box-img1' src='../../resource/images/box2.png' />
+  <view class='box-text'>发起活动</view>
+</navigator>
+<navigator class='box1 box12' url="../../pages/contacts/contacts">
+  <image class='box-img2' src='../../resource/images/box1.png' />
+  <view class='box-text'>扫码加入</view>
+</navigator>
+
+
+</view>
