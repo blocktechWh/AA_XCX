@@ -4,12 +4,14 @@ import util from 'util.js';
  * success 成功的回调
  * fail 失败的回调
  */
-function _get(url, success, fail) {
+function _get(url,token,success, fail) {
 
   console.log("------start---_get----");
+  console.log(url);
   wx.request({
     url: url,
     header: {
+      'Authorization': token,
       // 'Content-Type': 'application/json'
     },
     success: function (res) {
@@ -17,6 +19,7 @@ function _get(url, success, fail) {
     },
     fail: function (res) {
       fail(res);
+      
     }
   });
 
@@ -28,15 +31,17 @@ function _get(url, success, fail) {
  * success 成功的回调
  * fail 失败的回调
  */
-function _post_from(url, data, success, fail) {
+function _post_from(url, data,token ,success, fail) {
   console.log("----_post--start-------");
+  console.log(url);
   wx.request({
     url: url,
     header: {
+      'Authorization': token,
       'content-type': 'application/x-www-form-urlencoded',
     },
     method: 'POST',
-    data: { data: data },
+    data: data,
     success: function (res) {
       success(res);
     },
@@ -52,11 +57,13 @@ function _post_from(url, data, success, fail) {
 * success 成功的回调
 * fail 失败的回调
 */
-function _post_json(url, data, success, fail) {
+function _post_json(url, data, token, success, fail) {
   console.log("----_post--start-------");
+  console.log(url);
   wx.request({
     url: url,
     header: {
+      'Authorization': token,
       'content-type': 'application/json',
     },
     method: 'POST',
@@ -73,6 +80,6 @@ function _post_json(url, data, success, fail) {
 }
 module.exports = {
   _get: _get,
-  _post: _post,
+  _post_from: _post_from,
   _post_json: _post_json
 }

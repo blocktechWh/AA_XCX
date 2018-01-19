@@ -1,0 +1,90 @@
+<!--pages/updateActivities/updateActivities.wxml-->
+<scroll-view>
+  <view class='newCount_wrap'>
+    <view class='check_title'>
+      参与人(点选多人) :
+    </view>
+    <view class='check_person'>
+      <block wx:for="{{joinersList}}" wx:key="index">
+        <block wx:if="{{item.isChecked==true}}">
+          <view class='check_pesrons_box' catchtap='checkJoiner' data-index="{{item.index}}">
+            <image class='checked_pesrons_img' src='{{item.joinerImg}}'></image>
+            <view class='check_pesrons_text'>
+              <text>{{item.joinerName}}</text>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='check_pesrons_box' catchtap='checkJoiner' data-index="{{item.index}}">
+            <image class='check_pesrons_img' src='{{item.joinerImg}}'></image>
+            <view class='check_pesrons_text'>
+              <text>{{item.joinerName}}</text>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class='check_title'>
+      垫付人(点选一人) :
+    </view>
+    <view class='check_person'>
+      <block wx:for="{{payersWaitList}}" wx:key="{{index}}">
+        <block wx:if="{{item.isChecked==true}}">
+          <view class='check_pesrons_box' catchtap='checkPayer' data-index="{{item.index}}">
+            <image class='checked_pesrons_img' src='{{item.payerImg}}'></image>
+            <view class='check_pesrons_text'>{{item.payerName}}</view>
+          </view>
+        </block>
+        <block wx:else>
+          <view class='check_pesrons_box' catchtap='checkPayer' data-index="{{item.index}}">
+            <image class='check_pesrons_img' src='{{item.payerImg}}'></image>
+            <view class='check_pesrons_text'>{{item.payerName}}</view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="page">
+
+    <view class="page__bd">
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">垫付金额</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" value='{{amount}}' type='digit'  bindinput='amountInput' placeholder="请输入垫付金额" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">垫付时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{date}}" start="{{earlierDate}}" end="{{laterDate}}" bindchange="bindDateChange">
+              <view class="weui-input">{{date}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">备注</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" value='{{memo}}' bindinput='remarksInput' placeholder="{{remark}}" />
+          </view>
+        </view>
+
+      </view>
+      <view class='create-sure'>
+        <button catchtap='modifySure' type='primary' class='weui-btn'>确定</button>
+      </view>
+
+
+    </view>
+  </view>
+</scroll-view>

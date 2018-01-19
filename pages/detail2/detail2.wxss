@@ -18,7 +18,6 @@
   height: 70rpx;
   text-align: center;
   line-height: 70rpx;
-
 }
 .accoutIcon{
   display: inline-block;
@@ -33,12 +32,51 @@
   font-size: 36rpx;
 }
 
+.results{
+  width: 100%;
+  height: auto;
+  margin-top: 50rpx;
+}
+.results_wrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top:20rpx;
+  box-sizing: border-box; 
+}
+.results_box{
+  flex: 1;
+  height: 160rpx;
+
+}
+.results_box_img{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx auto 0;
+  border-radius: 50%;
+}
+.results_box_name{
+  text-align: center;
+  font-size: 30rpx;
+  color: #000;
+
+}
+.results_box_arrow{
+  width: 100%;
+  height: 50rpx;
+  display: block;
+}
 .weui-flex{-webkit-box-align:center;-webkit-align-items:center;align-items:center}
 .weui-cells{margin-top:0;opacity:1;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:.3s;transition:.3s}
 .weui-cells:after,.weui-cells:before{display:none}
 .weui-cells_show{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}
 .weui-cell:before{right:15px}
-.kind-list__item{margin:5px 0;background-color:#fff;border-radius:2px;overflow:hidden}
+.kind-list__item{margin:5px 0;background-color:#fff;border-radius:2px;overflow:hidden;border-bottom: 4rpx solid #e8e8ed;position: relative;padding-top:40rpx;}
+.pull-menu{position: absolute;top: -8rpx;right: 10rpx;width: 120rpx;background: white;text-align: right;font-size:40rpx;}
+.text-btn{}
+.menu-box{height: 120rpx;border: 1rpx solid #e8e8ed}
+.menu-box view{height: 60rpx;line-height: 60rpx;font-size: 30rpx;border-bottom: 1rpx solid #e8e8ed;text-align: center}
 .weui-flex_box{font-size: 32rpx;}
 .box_left{text-align: left}
 .box_right{text-align: right}
@@ -53,4 +91,4 @@
 .portrait_name{text-align: center;font-size: 28rpx;color: #999}
 .portrait_arrow{display: block;width: 45rpx;height: 38rpx;margin: 20rpx auto 0}
 .portrait_money{font-size: 32rpx;color: #000;font-weight: bold;text-align: center}
-.page__bd{padding-bottom: 0 !important;margin-top: 10rpx}
+.page__bd{padding-bottom: 0 !important;margin-top: 10rpx;background: white}

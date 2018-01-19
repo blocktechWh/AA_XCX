@@ -1,66 +1,81 @@
-<view class="page">  
-    <view class="page__bd page__bd_spacing">
-        <view class="kind-list">
-            <block wx:for="{{list}}" wx:key="id">
-                <view class="kind-list__item">
-                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
-                    <view class="weui-flex__item">
-                          <view class='weui-flex_box box_left'>{{item.name}}(共{{item.count}}人)</view>
-                          <view class='weui-flex_box box_left'>{{item.activity}}</view>
-                    </view>
-                     <view class="weui-flex__item">
-                          <view class='weui-flex_box box_right' style='font-weight:bold'>¥ {{item.cash}}</view>
-                          <view class='weui-flex_box box_right'>{{item.timer}}</view>
-                    </view>
-
-               
-                    </view>
-                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
-                        <view class=" weui-cells {{item.open ? 'weui-cells_show' : ''}}">
-                            <block>
-                           
-                                <view class="head_portrait portrait">
-                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
-                                  <text class='portrait_name'>姓名</text>
-                                </view>
-                                 <view class="head_portrait portrait">
-                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
-                                  <text class='portrait_name'>姓名</text>
-                                </view>
-                                <view class="head_portrait portrait">
-                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
-                                  <text class='portrait_name'>姓名</text>
-                                </view>
-                                  <view class="head_portrait portrait">
-                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
-                                  <text class='portrait_name'>姓名</text>
-                                </view>
-                                  <view class="head_portrait portrait">
-                                  <image class='portrait_img' src='../../resource/images/mark.jpg' ></image>
-                                  <text class='portrait_name'>姓名</text>
-                                </view>
-                                <view style='clear:both;margin-top:10rpx;text-align:center'>
-                                  <text>每人AA50元</text>
-                                </view>
-                            </block>
-                        </view>
-                    </view>
-                </view>
-            </block>
-        </view>
-    </view>
-
-        <navigator url="../../pages/newActivities/newActivities"  hover-class="weui-cell_active"> 
-          <view class='newAccount'>
-          <image class='accoutIcon' src="../../resource/iconfont/iconadd.png" />
-          <text class='accountText'>新的账目</text>
+<wxs module="filters" src="../../utils/addmul.wxs"></wxs>
+<view class="page">
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="index" wx:for-item="item">
+      <!-- bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  -->
+        <view class="kind-list__item" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  data-index="{{item.index}}"  style="{{item.txtStyle}}">
+          <view id="{{item.id}}" data-index="{{item.index}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" catchtap="kindToggle">
+            <view class="weui-flex__item">
+              <view class='weui-flex_box box_left'>{{item.name}}(共{{item.count}}人)</view>
+              <view class='weui-flex_box box_left'>{{item.activity}}</view>
+            </view>
+            <view class="weui-flex__item">
+              <view class='weui-flex_box box_right' style='font-weight:bold'>¥ {{item.cash}}</view>
+              <view class='weui-flex_box box_right'>{{item.timer}}</view>
+            </view>
           </view>
-        </navigator>
-        <navigator url="../../pages/results/results" class="page__bd page__bd_spacing">
-          <button class="weui-btn" type="primary">继续记账</button>         
-        </navigator>
-         <navigator class="page__bd page__bd_spacing">
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class=" weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for="{{detailJoinerList}}" wx:for-item="detailJoiner">
+                <view class="head_portrait portrait">
+                  <image class='portrait_img' src='{{detailJoiner.detailJoinerImg}}'></image>
+                  <text class='portrait_name'><text>{{detailJoiner.detailJoinerName}}</text></text>
+                </view>
+              </block>
+              <view style='clear:both;margin-top:80rpx;margin-bottom:20rpx;text-align:center;padding-top:30rpx;font-size:35rpx'>
+                <text>每人AA{{item.aaAvgAmount}}元</text>
+              </view>
+            </view>
+          </view>
+          <view class='pull-menu' catchtap='openMenu' data-index="{{item.index}}">
+            <text class='text-btn'>. . .</text>
+            <view class='menu-box' wx:if="{{item.openMenu}}">
+              <view catchtap='updateItem' data-index="{{item.index}}"><text>编辑</text></view>
+              <view catchtap='deleteItem' data-index="{{item.index}}"><text>删除</text></view>
+            </view>
+          </view>
           
-          <button class="weui-btn" type="primary" disabled="true">开始计算</button>
-        </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+  <navigator url="../../pages/newActivities/newActivities?actionId={{actionId}}" hover-class="weui-cell_active">
+    <view class='newAccount'>
+      <image class='accoutIcon' src="../../resource/iconfont/iconadd.png" />
+      <text class='accountText'>新的账目</text>
+    </view>
+  </navigator>
+  <view class="results">
+    <block wx:for="{{resultList}}">
+      <view class="results_wrap">
+
+        <view class="results_box">
+          <image class='results_box_img' src='{{item.fromHead}}'></image>
+          <view class='results_box_name'>
+            <text>{{item.fromName}}</text>
+          </view>
+        </view>
+        <view class="results_box">
+
+          <view style="width: 100%; height: 50rpx;line-height: 50rpx;font-size: 36rpx; text-align: center;margin-top:55rpx;background-image:url('../../resource/images/rightArrow.png');background-size:cover" class='results_box_money'>￥
+            <text>{{item.amount}}</text>
+          </view>
+        </view>
+        <view class="results_box">
+          <image class='results_box_img' src='{{item.toHead}}'></image>
+          <view class='results_box_name'>
+            <text>{{item.toName}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- <navigator url="../../pages/results/results" class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary">继续记账</button>
+  </navigator>
+  <navigator class="page__bd page__bd_spacing">
+
+    <button class="weui-btn" type="primary" disabled="true">开始计算</button>
+  </navigator> -->
 </view>

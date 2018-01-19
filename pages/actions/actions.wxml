@@ -6,7 +6,7 @@
           <view class="weui-label">活动主题</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="一起聚餐吧" />
+          <input class="weui-input" bindinput='titleInput' placeholder="{{title}}" />
         </view>
       </view>
     </view>
@@ -17,7 +17,7 @@
       微信分享
     </view>
     <view class="page__bd_spacing">
-      <button class="weui-btn" type="primary">分享到...</button>
+      <button class="weui-btn" type="primary" open-type="share">分享到...</button>
     </view>
     <view class='remark1'>
       扫一扫
@@ -32,16 +32,16 @@
 
     <view class="box-room">
       <view class="box-rooms">
-        <text class="placeholder">1</text>
+        <text class="placeholder">{{roomCode[0]}}</text>
       </view>
       <view class="box-rooms border0">
-        <text class="placeholder">2</text>
+        <text class="placeholder">{{roomCode[1]}}</text>
       </view>
       <view class="box-rooms border0">
-        <text class="placeholder">3</text>
+        <text class="placeholder">{{roomCode[2]}}</text>
       </view>
       <view class="box-rooms border0">
-        <text class="placeholder">4</text>
+        <text class="placeholder">{{roomCode[3]}}</text>
       </view>
     </view>
 

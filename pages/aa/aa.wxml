@@ -2,13 +2,11 @@
 <view class='box'>
   <view class='box1 box13'>
     <view class='box-text2'>请输入活动号</view>
-
+  
     <view class="box-room" catchtap="set_Focus">
-      <input class="room-code-input"  bindinput="roomCodeInputListener" type="number" focus="{{isFocus}}" maxlength="4" />
-      <!-- <block for="{{bindNumberArray}}">
 
-        <view class="box-rooms"><text>{{}}</text></view>
-      </block> -->
+      <input class="room-code-input" value='{{value}}'  bindinput="roomCodeInputListener" type="number" focus="{{isFocus}}" maxlength="4" />
+
        <view class="box-rooms"><text>{{bindNumberArray[0]}}</text></view>
       <view class="box-rooms border0"><text>{{bindNumberArray[1]}}</text></view>
       <view class="box-rooms border0"><text>{{bindNumberArray[2]}}</text></view>

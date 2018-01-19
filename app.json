@@ -1,14 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",  
+    "pages/aa/aa",
     "pages/user/user",
     "pages/actions/actions",
-    "pages/detail/detail",
     "pages/detail2/detail2",
     "pages/newActivities/newActivities",
-    "pages/results/results"
-    
+    "pages/results/results",
+    "pages/updateActivities/updateActivities"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,18 +16,18 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "backgroundColor": "yellow",
-    "selectedColor": "#fff",
+    "backgroundColor": "white",
+    "selectedColor": "#4e8cee",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "resource/iconfont/icon1.png",
-        "selectedIconPath": "resource/iconfont/icon2.png" 
+        "selectedIconPath": "resource/iconfont/icon2.png"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
+        "pagePath": "pages/aa/aa",
+        "text": "AA",
         "iconPath": "resource/iconfont/icon3.png",
         "selectedIconPath": "resource/iconfont/icon4.png"
       },
