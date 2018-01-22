@@ -43,8 +43,7 @@ Page({
       })
     } else if (options.shareActionId){
       console.log("shareActionId=", options.shareActionId);
-      request._get(app.host+"/joinAction?id="+options.shareActionId, app.globalData.token, function (res) {
-        console.log("actionId11=", res.data);
+      request._get(app.host+"/joinAction?id="+options.shareActionId+"&&type=share", app.globalData.token, function (res) {
 
         self.data.actionId = res.data.data;
 
@@ -81,6 +80,7 @@ Page({
           console.log("获取活动详情=", res);
           wx.hideLoading();
           if (res.data.success) {
+            wx.stopPullDownRefresh();
             self.operateItems(res);
             self.operateResult(res);
           } else {
@@ -102,6 +102,7 @@ Page({
           console.log("获取活动详情=", res);
           wx.hideLoading();
           if (res.data.success) {
+            wx.stopPullDownRefresh();
             self.operateItems(res);
             self.operateResult(res);
           } else {
@@ -640,5 +641,11 @@ Page({
     }, function (res) {
       console.log("删除账目返回", res);
     })
+  },
+  onPullDownRefresh: function () {
+    var self=this;
+    self.onShow();
+    
+    
   }
 });

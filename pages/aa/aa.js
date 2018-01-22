@@ -17,8 +17,6 @@ Page({
     //     return util.formatTime(new Date(log))
     //   })
     // })
-
-
   },
   roomCodeInputListener: function (e) {
     console.log(e);
@@ -33,7 +31,6 @@ Page({
         self.data.bindNumberArray = e.detail.value.split("");
       }
 
-      console.log("this.data.bindNumberArray=" + self.data.bindNumberArray);
       self.setData({
         bindNumberArray: self.data.bindNumberArray
       })
@@ -101,10 +98,18 @@ Page({
 
         })
         request._get(result, app.globalData.token, function (res) {
-          console.log("actionId=", res.data.data);
-          wx.navigateTo({
-            url: '../../pages/detail2/detail2?actionId=' + res.data.data,
-          })
+          if (res.data.success) {
+            wx.navigateTo({
+              url: '../../pages/detail2/detail2?actionId=' + res.data.data,
+            })
+
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: res.data.msg,
+              showCancel: false
+            })
+          }
 
         }, function (res) {
 

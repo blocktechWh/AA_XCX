@@ -59,7 +59,7 @@ Page({
           self.data.qrcPhld.roomCode = res.data.data.code;
           //let qrcPhld = JSON.stringify(self.data.qrcPhld.toString());
           //let qrcPhld = JSON.stringify(self.data.qrcPhld);
-          let qrcPhld = "http://dingyeap.com/api/joinAction?id=" + id;
+          let qrcPhld = "http://dingyeap.com/api/joinAction?id=" + id+"&&type=qr";
           console.log("qrcPhld=", qrcPhld);
 
           self.createQrCode(qrcPhld, self.canvasId, self.size.w, self.size.h);

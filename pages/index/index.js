@@ -12,11 +12,15 @@ Page({
     actionList:[]
   },
   onLoad:function(){
-    var self=this;
+    
+    
+  },
+  onShow:function(){
+    var self = this;
     wx.showLoading({
       title: "加载中..."
     })
-    if (app.globalData.token){
+    if (app.globalData.token) {
       //获取活动列表
       request._get(app.host + "/getActions", app.globalData.token, function (res) {
         console.log("获取活动列表=", res);
@@ -39,9 +43,9 @@ Page({
         function (res) {
           console.log("获取活动列表=", res);
         })
-    }else{
-      app.tokenReadyCallback = res =>{
-        let token=res;
+    } else {
+      app.tokenReadyCallback = res => {
+        let token = res;
         //获取活动列表
         request._get(app.host + "/getActions", token, function (res) {
           console.log("获取活动列表=", res);
@@ -63,10 +67,6 @@ Page({
         })
       }
     }
-    
-  },
-  onShow:function(){
-    
   },
   //事件处理函数
   bindViewTap: function() {
