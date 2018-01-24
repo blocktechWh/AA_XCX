@@ -1,1 +1,12 @@
-/* pages/home/home.wxss */
+.empty image{
+  width: 359rpx;
+  height: 220rpx;
+  margin: 184rpx auto 30rpx auto;
+}
+.empty text{
+  color: #888888;
+  margin-bottom: 80rpx;
+}
+.empty button{
+  width: 322rpx;
+}

@@ -113,3 +113,18 @@ text.blue{
   bottom: 0;
   box-shadow: 0 1px 5px #444;
 }
+
+button{
+  height: 73rpx;
+  line-height: 73rpx;
+  font-size: 30rpx;
+  background: linear-gradient(#54d366,#4bb15c);
+  color: #fff;
+  border-radius: 40rpx;
+}
+button:hover,button:active,button:visited{
+  color: #fff;
+}
+button:active{
+  transform: translate(1px,1px);
+}

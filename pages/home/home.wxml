@@ -1,4 +1,8 @@
-
+<view wx:if="{{list.length<=0}}" class= "empty flex-v">
+  <image src='/assets/background/bill_empty.jpg'></image>
+  <text class='fz-12'>你还没有参与任何活动噢～</text>
+  <button>去添加</button>
+</view>
 
 <view class='topShadow'></view>
 <view class='bottomShadow'></view>
