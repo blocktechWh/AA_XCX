@@ -1,41 +1,36 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/aa/aa",
-    "pages/user/user",
-    "pages/actions/actions",
-    "pages/detail2/detail2",
-    "pages/newActivities/newActivities",
-    "pages/results/results",
-    "pages/updateActivities/updateActivities"
+    "pages/home/home",
+    "pages/add/add",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4e8cee",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "活动列表",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "dark"
   },
   "tabBar": {
-    "backgroundColor": "white",
-    "selectedColor": "#4e8cee",
+    "backgroundColor": "yellow",
+    "selectedColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "resource/iconfont/icon1.png",
-        "selectedIconPath": "resource/iconfont/icon2.png"
+        "iconPath": "assets/icon/icon1.png",
+        "selectedIconPath": "assets/icon/icon2.png"
       },
       {
-        "pagePath": "pages/aa/aa",
-        "text": "AA",
-        "iconPath": "resource/iconfont/icon3.png",
-        "selectedIconPath": "resource/iconfont/icon4.png"
+        "pagePath": "pages/add/add",
+        "text": "日志",
+        "iconPath": "resource/icon/icon3.png",
+        "selectedIconPath": "resource/icon/icon4.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "resource/iconfont/icon5.png",
-        "selectedIconPath": "resource/iconfont/icon6.png"
+        "iconPath": "assets/icon/icon5.png",
+        "selectedIconPath": "assets/icon/icon6.png"
       }
     ]
   }
