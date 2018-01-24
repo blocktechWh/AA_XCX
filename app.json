@@ -6,31 +6,33 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "活动列表",
-    "navigationBarTextStyle": "dark"
+    "navigationBarTitleText": "AA一起"
   },
   "tabBar": {
-    "backgroundColor": "yellow",
-    "selectedColor": "#fff",
+    "backgroundColor": "#fff",
+    "selectedColor": "#111",
+    "color": "#b5b5b5",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "assets/icon/icon1.png",
-        "selectedIconPath": "assets/icon/icon2.png"
+        "iconPath": "assets/icon/tab1.png",
+        "selectedIconPath": "assets/icon/tab2.png"
       },
       {
         "pagePath": "pages/add/add",
-        "text": "日志",
-        "iconPath": "resource/icon/icon3.png",
-        "selectedIconPath": "resource/icon/icon4.png"
+        "text": "新活动",
+        "iconPath": "assets/icon/tab3.png",
+        "selectedIconPath": "assets/icon/tab4.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "assets/icon/icon5.png",
-        "selectedIconPath": "assets/icon/icon6.png"
+        "iconPath": "assets/icon/tab5.png",
+        "selectedIconPath": "assets/icon/tab6.png"
       }
     ]
   }

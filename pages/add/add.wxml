@@ -1,2 +1,4 @@
-<!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+
+
+<view class='topShadow'></view>
+<view class='bottomShadow'></view>
