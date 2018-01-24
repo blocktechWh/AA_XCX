@@ -114,6 +114,19 @@ text.blue{
   box-shadow: 0 1px 5px #444;
 }
 
+.gradient.orange{
+  background: linear-gradient(#ffc72e,#ef962c);
+}
+.gradient.blue{
+  background: linear-gradient(#00bffd,#2b91f0);
+}
+.gradient.gray{
+  background: linear-gradient(#cbd5d9,#96a9bc);
+}
+.gradient.green{
+  background: linear-gradient(#54d366,#4bb15c);
+}
+
 button{
   height: 73rpx;
   line-height: 73rpx;
