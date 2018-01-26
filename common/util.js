@@ -59,7 +59,7 @@ const getTimeString = date =>{
 var basicHttp = (method, requestUrl, data, successCallback, failCallback) => {
   let header = {
     'Accept': 'application/json',
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
   }
   var token = getApp().globalData.token;
   if (token && token !== '') {
@@ -78,14 +78,8 @@ var basicHttp = (method, requestUrl, data, successCallback, failCallback) => {
       wx.hideToast();
       if(res.statusCode == 200){
         if (successCallback) {
-          if (res.data.code == -2) {
-            wx.showModal({ title: 'Notice', content: 'Please Login', showCancel: false })
-          } else {
-            successCallback(res.data);
-          }
+          successCallback(res.data);
         }
-      }else{
-        wx.navigateTo({ url: '/pages/NoAuthority/NoAuthority' })
       }
     },
     fail: function (err) {
