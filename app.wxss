@@ -107,11 +107,11 @@ text.blue{
 }
 .topShadow{
   top: 0;
-  box-shadow: 0 1px 5px #444;
+  box-shadow: 0 1px 5px #999;
 }
 .bottomShadow{
   bottom: 0;
-  box-shadow: 0 1px 5px #444;
+  box-shadow: 0 1px 5px #999;
 }
 
 .gradient.orange{
@@ -139,5 +139,5 @@ button:hover,button:active,button:visited{
   color: #fff;
 }
 button:active{
-  transform: translate(1px,1px);
+  transform: translate(0px,1px);
 }

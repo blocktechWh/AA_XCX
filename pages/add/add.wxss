@@ -1,1 +1,31 @@
-/* pages/add/add.wxss */
+button{
+  width: 710rpx;
+  height: 280rpx;
+  margin: 30rpx 20rpx;
+  border-radius: 5px;
+  padding: 0;
+  text-shadow: 1px 1px #173c1d;
+  box-shadow: 2px 2px 5px #aaa;
+  line-height: 0;
+}
+.icon{
+  text-align: right;
+}
+.text{
+  text-align: left;
+}
+.icon image.addByCreate{
+  width: 63rpx;
+  height: 65rpx;
+  margin-right: 71rpx;
+}
+.icon image.addByQr{
+  width: 92rpx;
+  height: 94rpx;
+  margin-right: 57rpx;
+}
+.icon image.addById{
+  width: 76rpx;
+  height: 78rpx;
+  margin-right: 63rpx;
+}

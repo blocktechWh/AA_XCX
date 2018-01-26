@@ -1,4 +1,29 @@
+<button class='gradient blue flex-h'>
+  <view class='flex1 icon'>
+    <image class='addByCreate' src='/assets/icon/addByCreate.png'></image>
+  </view>
+  <view class='text flex1'>
+    <text>新的活动</text>
+  </view>
+</button>
 
+<button class='gradient orange flex-h'>
+  <view class='flex1 icon'>
+    <image class='addByQr' src='/assets/icon/addByQr.png'></image>
+  </view>
+  <view class='text flex1'>
+    <text>扫码加入</text>
+  </view>
+</button>
+
+<button class='gradient green flex-h'>
+  <view class='flex1 icon'>
+    <image class='addById' src='/assets/icon/addById.png'></image>
+  </view>
+  <view class='text flex1'>
+    <text>输入活动号</text>
+  </view>
+</button>
 
 <view class='topShadow'></view>
 <view class='bottomShadow'></view>

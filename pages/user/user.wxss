@@ -1,1 +1,55 @@
-/* pages/user/user.wxss */
+page{
+  background: #f4f4f4;
+}
+.card{
+  background: #fff;
+  box-shadow: 2px 2px 5px #ebebeb;
+  border-radius: 5px;
+}
+.userInfo{
+  width: 690rpx;
+  margin: 30rpx auto;
+  text-align: center;
+  padding: 40rpx 0;
+}
+.userPhoto{
+  width: 198rpx;
+  height: 198rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+}
+.login_button{
+  padding: 7rpx 50rpx;
+  border:solid 1px #49b55a;
+  color: #49b55a;
+  border-radius: 15px;
+}
+
+.button_group .card{
+  width: 335rpx;
+  height: 190rpx;
+  display: inline-block;
+  margin-left: 30rpx;
+  position: relative;
+}
+.button_group .card .flex-h{
+  margin-top: 30rpx;
+}
+.feedbackIcon,.recordIcon{
+  margin: 0rpx 20rpx 0 30rpx;
+} 
+.recordIcon{
+  width: 33rpx;
+  height: 37rpx;
+}
+.feedbackIcon{
+  width: 39rpx;
+  height: 36rpx;
+}
+.icon.arrow{
+  width: 27rpx;
+  height: 17rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+}

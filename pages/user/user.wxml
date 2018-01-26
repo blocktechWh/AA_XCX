@@ -1,4 +1,25 @@
+<view class='card userInfo flex-v'>
+  <image class='userPhoto' src="{{userInfo?userInfo.avatarUrl:'/assets/icon/noLogin.png'}}"></image>
+  <text wx:if="{{!userInfo}}" class='login_button fz-12'>去登录</text>
+  <text wx:if="{{userInfo}}" class='fz-12'>{{userInfo.nickName}}</text>
+</view>
 
+<view class='button_group'>
+  <view class='card record'>
+    <view class='flex-h'>
+      <image class='recordIcon' src='/assets/icon/record.png'></image>
+      <text class='flex1 fz-12'>AA记录</text>
+    </view>
+    <image class='icon arrow'  src='/assets/icon/arrow.png'></image>
+  </view>
+  <view class='card feedback'>
+    <view class='flex-h'>
+      <image class='feedbackIcon' src='/assets/icon/feedback.png'></image>
+      <text class='flex1 fz-12'>用户反馈</text>
+    </view>
+    <image class='icon arrow'  src='/assets/icon/arrow.png'></image>
+  </view>
+</view>
 
 <view class='topShadow'></view>
 <view class='bottomShadow'></view>
