@@ -1,6 +1,6 @@
 <view class='card userInfo flex-v'>
   <image class='userPhoto' src="{{userInfo?userInfo.avatarUrl:'/assets/icon/noLogin.png'}}"></image>
-  <text wx:if="{{!userInfo}}" class='login_button fz-12'>去登录</text>
+  <text bindtap='login' wx:if="{{!userInfo}}" class='login_button fz-12'>去登录</text>
   <text wx:if="{{userInfo}}" class='fz-12'>{{userInfo.nickName}}</text>
 </view>
 
