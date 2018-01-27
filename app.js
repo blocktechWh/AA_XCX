@@ -47,21 +47,22 @@ App({
           name: userInfo.nickName
         }
         util.http_post(url.WxLogin, data, res => {
-          if (!res.success) return
+          this.globalData.logined = true
           this.globalData.userInfo = userInfo
+          wx.setStorageSync('token', res.data.Authorization)
+          this.globalData.token = res.data.Authorization
           this.userInfoReadyCallback()
         })
       }
     })
   },
   userInfoReadyCallback: function(){
-    this.userInfoReadyCallbacks.forEach(cb=>{
-      cb()
-    })
     util.hideLoading()
+    this.userInfoReadyCallbacks.forEach(cb => { cb() })
   },
   userInfoReadyCallbacks:[],
   globalData: {
+    logined: false,
     userInfo: null
   }
 })

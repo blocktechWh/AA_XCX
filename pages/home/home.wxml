@@ -1,4 +1,20 @@
-<view wx:if="{{list.length<=0}}" class= "empty flex-v">
+<view wx:if="{{loaded && list.length>0}}">
+  <view class='block' wx:for="{{list}}" wx:key="{{index}}">
+    <view class='body gradient {{item.color}}'>
+      <text class='title fz-15'>{{item.title}}</text>
+      <view class='seperator'></view>
+      <text class='time fz-12'>{{item.createTime}}</text>
+      <text class='amount'><text class='fz-20'>¥ </text><text class='fz-30'>{{item.paySum}}</text></text>
+      <text class='count fz-15'>（共{{item.itemJoinCount}}人）</text>
+    </view>
+    <view class='foot flex-h'>
+      <text class='flex1 fz-15'>进行中</text>
+      <image src='/assets/icon/share.png'></image>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{loaded && list.length<=0}}" class= "empty flex-v">
   <image src='/assets/background/bill_empty.jpg'></image>
   <text class='fz-12'>你还没有参与任何活动噢～</text>
   <button>去添加</button>
