@@ -2,8 +2,10 @@
 
 </view>
 
-<view wx:if="{{loaded && list.length<=0}}">
-
+<view wx:if="{{loaded && list.length<=0}}" class="empty flex-v">
+  <image src='/assets/background/detail_empty.png'></image>
+  <text class='fz-12'>你还没有创建任何活动账单噢～</text>
+  <button>去创建</button>
 </view>
 
 <view class='topShadow'></view>

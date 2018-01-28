@@ -1,3 +1,15 @@
 page{
   background: #fff;
 }
+.empty image{
+  width: 366rpx;
+  height: 279rpx;
+  margin: 184rpx auto 30rpx auto;
+}
+.empty text{
+  color: #888888;
+  margin-bottom: 80rpx;
+}
+.empty button{
+  width: 322rpx;
+}
