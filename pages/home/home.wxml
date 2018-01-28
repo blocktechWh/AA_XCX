@@ -1,5 +1,5 @@
 <view wx:if="{{loaded && list.length>0}}">
-  <view class='block' wx:for="{{list}}" wx:key="{{index}}">
+  <view class='block' wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.rid}}" bindtap='toBill'>
     <view class='body gradient {{item.color}}'>
       <text class='title fz-15'>{{item.title}}</text>
       <view class='seperator'></view>

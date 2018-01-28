@@ -12,7 +12,7 @@
     </view>
     <image class='icon arrow'  src='/assets/icon/arrow.png'></image>
   </view>
-  <view class='card feedback'>
+  <view class='card feedback' bindtap='toFeedback'>
     <view class='flex-h'>
       <image class='feedbackIcon' src='/assets/icon/feedback.png'></image>
       <text class='flex1 fz-12'>用户反馈</text>

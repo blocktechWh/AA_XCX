@@ -1,4 +1,4 @@
-<button class='gradient blue flex-h'>
+<button class='gradient blue flex-h' bindtap='toBillNew'>
   <view class='flex1 icon'>
     <image class='addByCreate' src='/assets/icon/addByCreate.png'></image>
   </view>

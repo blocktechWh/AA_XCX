@@ -25,5 +25,8 @@ Page({
       })
       this.setData({ list, loaded:true })
     })
+  },
+  toBill: function(e){
+    wx.navigateTo({ url: '/pages/Bill/Bill?id=' + e.currentTarget.dataset.id})
   }
 })

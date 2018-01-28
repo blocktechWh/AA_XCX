@@ -1,7 +1,11 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/Bill/Bill",
+    "pages/BillNew/BillNew",
     "pages/add/add",
+    "pages/feedback/feedback",
+    "pages/record/record",
     "pages/user/user"
   ],
   "window": {

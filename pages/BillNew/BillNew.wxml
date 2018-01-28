@@ -1,0 +1,29 @@
+<view class='wrapper'>
+  <view class='card flex-v'>
+    <view class='row flex-h underline'>
+      <text class='title'>主题</text>
+      <text>部落客活动</text>
+    </view>
+    <view class='row flex-h underline'>
+      <text class='title'>微信扫一扫</text>
+    </view>
+    <view class='row'>
+      <canvas></canvas>
+    </view>
+    <view class='row flex-h underline'>
+      <text class='title'>活动号</text>
+    </view>
+    <view class='id_row'>
+      <view class='number'>9</view>
+      <view class='number'>9</view>
+      <view class='number'>9</view>
+      <view class='number'>9</view>
+    </view>
+  </view>
+  <view class='share_tip'>
+    <text class='fz-15'>微信分享</text><text class='fz-13'>先分享在记账哦～</text>
+  </view>
+  <button>立即分享</button>
+</view>
+
+<view class='topShadow'></view>

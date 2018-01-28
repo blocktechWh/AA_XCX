@@ -1,3 +1,6 @@
+page{
+  background: #fff;
+}
 button{
   width: 710rpx;
   height: 280rpx;

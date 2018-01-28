@@ -1,0 +1,9 @@
+<view wx:if="{{loaded && list.length>0}}">
+
+</view>
+
+<view wx:if="{{loaded && list.length<=0}}">
+
+</view>
+
+<view class='topShadow'></view>

@@ -1,3 +1,6 @@
+page{
+  background: #f4f4f4;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -44,6 +47,10 @@
 .fz-12{
   font-size: 24rpx;
   line-height:24rpx;
+}
+.fz-13{
+  font-size: 26rpx;
+  line-height:26rpx;
 }
 .fz-14{
   font-size: 28rpx;
@@ -115,11 +122,11 @@ text.blue{
 }
 .topShadow{
   top: 0;
-  box-shadow: 0 1px 5px #999;
+  box-shadow: 0 1px 5px #aaa;
 }
 .bottomShadow{
   bottom: 0;
-  box-shadow: 0 1px 5px #999;
+  box-shadow: 0 1px 5px #aaa;
 }
 
 .gradient.orange{
