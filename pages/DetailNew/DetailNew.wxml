@@ -1,2 +1,26 @@
-<!--pages/DetailNew/DetailNew.wxml-->
-<text>pages/DetailNew/DetailNew.wxml</text>
+<view class='wrapper'>
+  <view class='card flex-v'>
+    <view class='row flex-h underline'>
+      <text class='title'>时间</text>
+      <text class='flex1'>{{title}}</text>
+    </view>
+    <view class='row flex-h underline'>
+      <text class='title'>项目</text>
+      <input class='flex1' placeholder='请输入你的活动名称'></input>
+    </view>
+    <view class='row flex-h'>
+      <text class='title'>金额</text>
+      <input class='flex1' placeholder='请输入活动金额'></input>
+    </view>
+  </view>
+  <view class='card list_card'>
+    <view class='row underline'>
+      <text class='title'>参与人（长按可选垫付人）</text>
+    </view>
+    <view>
+    </view>
+  </view>
+  <button>确定</button>
+</view>
+
+<view class='topShadow'></view>

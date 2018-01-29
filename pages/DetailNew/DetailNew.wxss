@@ -1,1 +1,34 @@
-/* pages/DetailNew/DetailNew.wxss */
+.wrapper{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.card{
+  background: #fff;
+  margin: 30rpx 0;
+  box-shadow: 2px 2px 5px #ebebeb;
+  border-radius: 5px;
+  padding: 20rpx 0 20rpx 40rpx;
+}
+.row{
+  width: 620rpx;
+  justify-content:space-between;
+  padding: 20rpx 30rpx 10rpx 0;
+  font-size: 25rpx;
+}
+.row input{
+  text-align:right;
+}
+.title{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+button{
+  position: fixed;
+  width: 690rpx;
+  bottom: 20rpx;
+}
+.list_card{
+  position: fixed;
+  top: 300rpx;
+  bottom: 93rpx;
+}
