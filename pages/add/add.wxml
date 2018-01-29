@@ -27,10 +27,10 @@
 
 <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
 <view class="modal-dialog" wx:if="{{showModal}}">
-  <view class="modal-title">添加数量</view>
+  <view class="modal-title">输入活动号</view>
   <view class="modal-content">
     <view class="modal-input">
-      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入数量"></input>
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入活动号"></input>
     </view>
   </view>
   <view class="modal-footer">

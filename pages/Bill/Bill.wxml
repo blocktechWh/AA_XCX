@@ -1,11 +1,24 @@
-<view wx:if="{{loaded && list.length>0}}">
-
+<view wx:if="{{loaded && items.length>0}}">
+  <view class='card-wrapper' bindtap='switchIndex'>
+    <view class='flex-h fz-14 top_title'>
+      <text class='flex1'>消费明细</text>
+      <image class='addIcon' src='/assets/icon/add.png'></image>
+      <text>新的明细</text>
+    </view>
+    <view class="card gradient blue {{index==currentIndex?'current':index==currentIndex+1?'next':index==currentIndex-1?'prev':''}}" wx:for="{{items}}" wx:key="{{index}}"></view>
+  </view>
+  <view class='divider fz-14 flex-h'>
+    全部AA结果
+  </view>
+  <view>
+  
+  </view>
 </view>
 
-<view wx:if="{{loaded && list.length<=0}}" class="empty flex-v">
+<view wx:if="{{loaded && items.length<=0}}" class="empty flex-v">
   <image src='/assets/background/detail_empty.png'></image>
   <text class='fz-12'>你还没有创建任何活动账单噢～</text>
-  <button>去创建</button>
+  <button bindtap='toDetailNew'>去创建</button>
 </view>
 
 <view class='topShadow'></view>

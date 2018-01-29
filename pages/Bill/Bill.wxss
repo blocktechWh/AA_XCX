@@ -13,3 +13,46 @@ page{
 .empty button{
   width: 322rpx;
 }
+
+.top_title{
+  padding: 20rpx;
+}
+.addIcon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.card-wrapper{
+  width: 750rpx;
+  height: 430rpx;
+  margin: 20rpx 0;
+  overflow: hidden; 
+  position: relative;
+}
+.card{
+  width: 560rpx;
+  height: 360rpx;
+  border-radius: 5px;
+  display:none;
+  position: absolute;
+  transition: all .5s ;
+}
+.card.prev,.card.next,.card.current{
+  display: block;
+}
+.card.current{
+  left: 95rpx;
+}
+.card.prev{
+  transform: scale(.9);
+  left: -465rpx;
+}
+.card.next{
+  transform: scale(.9);
+  left: 655rpx;
+}
+
+.divider{
+  height: 70rpx;
+  background: #f0efef;
+}

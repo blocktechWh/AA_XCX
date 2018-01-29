@@ -2,7 +2,7 @@
   <view class='card flex-v'>
     <view class='row flex-h underline'>
       <text class='title'>主题</text>
-      <text>部落客活动</text>
+      <text>{{title}}</text>
     </view>
     <view class='row flex-h underline'>
       <text class='title'>微信扫一扫</text>
@@ -14,10 +14,7 @@
       <text class='title'>活动号</text>
     </view>
     <view class='id_row'>
-      <view class='number'>9</view>
-      <view class='number'>9</view>
-      <view class='number'>9</view>
-      <view class='number'>9</view>
+      <view class='number' wx:for="{{code}}" wx:key="{{index}}">{{item}}</view>
     </view>
   </view>
   <view class='share_tip'>

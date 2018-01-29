@@ -3,6 +3,7 @@
     "pages/home/home",
     "pages/Bill/Bill",
     "pages/BillNew/BillNew",
+    "pages/DetailNew/DetailNew",
     "pages/add/add",
     "pages/feedback/feedback",
     "pages/record/record",
