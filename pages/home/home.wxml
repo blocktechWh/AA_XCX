@@ -8,7 +8,7 @@
       <text class='count fz-15'>（共{{item.itemJoinCount}}人）</text>
     </view>
     <view class='foot flex-h'>
-      <text class='flex1 fz-15'>进行中</text>
+      <text class='flex1 fz-15'>进行中({{item.code}})</text>
       <image src='/assets/icon/share.png'></image>
     </view>
   </view>

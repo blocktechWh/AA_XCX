@@ -7,8 +7,8 @@
     <view class='row flex-h underline'>
       <text class='title'>微信扫一扫</text>
     </view>
-    <view class='row'>
-      <canvas></canvas>
+    <view>
+      <canvas canvas-id='mycanvas'></canvas>
     </view>
     <view class='row flex-h underline'>
       <text class='title'>活动号</text>
