@@ -32,6 +32,12 @@ button{
   top: 300rpx;
   bottom: 93rpx;
 }
+.userGroup{
+  position: absolute;
+  top: 90rpx;
+  bottom:20rpx;
+  overflow: scroll;
+}
 .userButton{
   width: 150rpx;
   height: 180rpx;

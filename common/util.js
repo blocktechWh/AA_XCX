@@ -32,15 +32,12 @@ const diffDate = (date1, date2) => {
   return days ? days + ' days' : hours ? hours + ' hours' : minutes ? minutes + ' minutes' : seconds +' seconds'
 }
 
-const formatTime = date => {
+const formatTime = (date,joinString='.') => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
 
-  return [year, month, day].map(formatNumber).join('.')
+  return [year, month, day].map(formatNumber).join(joinString)
 }
 
 const formatNumber = n => {

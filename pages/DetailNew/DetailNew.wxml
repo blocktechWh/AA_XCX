@@ -2,29 +2,33 @@
   <view class='card flex-v'>
     <view class='row flex-h underline'>
       <text class='title'>时间</text>
-      <text class='flex1'>{{title}}</text>
+      <picker mode="date" value="{{payTime}}" bindchange="onDateChange">
+        <view class="picker">
+          {{payTime}}
+        </view>
+      </picker>
     </view>
     <view class='row flex-h underline'>
       <text class='title'>项目</text>
-      <input class='flex1' placeholder='请输入你的活动名称'></input>
+      <input class='flex1' placeholder='请输入你的活动名称' bindinput='titleInput'></input>
     </view>
     <view class='row flex-h'>
       <text class='title'>金额</text>
-      <input class='flex1' placeholder='请输入活动金额'></input>
+      <input class='flex1' placeholder='请输入活动金额' bindinput='amountInput'></input>
     </view>
   </view>
   <view class='card list_card'>
     <view class='row underline'>
       <text class='title'>参与人（长按可选垫付人）</text>
     </view>
-    <view>
-      <view data-id="{{item.mebId}}" wx:for="{{joiner}}" wx:key="{{index}}" class='userButton'>
+    <view class='userGroup'>
+      <view data-index="{{index}}" wx:for="{{joiner}}" wx:key="{{index}}" class='userButton' bindtap='toggleJoiner' bindlongpress='selectPayer'>
         <image class='userPhoto' src='{{item.head}}'></image>
         <text class='userName fz-12'>{{item.name}}</text>
       </view>
     </view>
   </view>
-  <button>确定</button>
+  <button bindtap='submit'>确定</button>
 </view>
 
 <view class='topShadow'></view>

@@ -18,7 +18,10 @@ Page({
   login: function(){
     app.login()
   },
-  toFeedback: function(){
+  toFeedback: function () {
     wx.navigateTo({ url: '/pages/feedback/feedback' })
+  },
+  toRecord: function () {
+    wx.navigateTo({ url: '/pages/record/record' })
   }
 })

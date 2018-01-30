@@ -47,11 +47,15 @@ App({
           name: userInfo.nickName
         }
         util.http_post(url.WxLogin, data, res => {
-          this.globalData.logined = true
-          this.globalData.userInfo = userInfo
-          wx.setStorageSync('token', res.data.Authorization)
-          this.globalData.token = res.data.Authorization
-          this.userInfoReadyCallback()
+          if(res.success){
+            this.globalData.logined = true
+            this.globalData.userInfo = userInfo
+            wx.setStorageSync('token', res.data.Authorization)
+            this.globalData.token = res.data.Authorization
+            this.userInfoReadyCallback()
+          }else{
+            if (res.msg) util.showModel('', res.msg)
+          }
         },err=>{
           if(err.errMsg)util.showModel('',err.errMsg)
           this.userInfoFailCallback()

@@ -6,7 +6,7 @@
 
 <view class='button_group'>
   <view class='card record'>
-    <view class='flex-h'>
+    <view class='flex-h' bindtap='toRecord'>
       <image class='recordIcon' src='/assets/icon/record.png'></image>
       <text class='flex1 fz-12'>AA记录</text>
     </view>

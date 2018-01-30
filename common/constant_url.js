@@ -1,4 +1,5 @@
-var host = "http://111.231.146.57/api"
+var host = "http://114.67.76.44/api"
+// var host = "http://blocktechwh.xyz/api"
 
 module.exports = {
   WxLogin: host + "/noauth/login2",

@@ -1,2 +1,3 @@
-<!--pages/record/record.wxml-->
-<text>pages/record/record.wxml</text>
+
+
+<view class='topShadow'></view>
