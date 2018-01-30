@@ -18,6 +18,10 @@
       <text class='title'>参与人（长按可选垫付人）</text>
     </view>
     <view>
+      <view data-id="{{item.mebId}}" wx:for="{{joiner}}" wx:key="{{index}}" class='userButton'>
+        <image class='userPhoto' src='{{item.head}}'></image>
+        <text class='userName fz-12'>{{item.name}}</text>
+      </view>
     </view>
   </view>
   <button>确定</button>

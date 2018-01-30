@@ -32,3 +32,24 @@ button{
   top: 300rpx;
   bottom: 93rpx;
 }
+.userButton{
+  width: 150rpx;
+  height: 180rpx;
+  line-height: 0;
+  display: inline-block;
+}
+.userPhoto{
+  width: 110rpx;
+  height: 110rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userName{
+  width: 140rpx;
+  height: 30rpx;
+  display: block;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
