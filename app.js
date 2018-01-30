@@ -54,6 +54,7 @@ App({
           this.userInfoReadyCallback()
         },err=>{
           if(err.errMsg)util.showModel('',err.errMsg)
+          this.userInfoFailCallback()
         })
       }
     })
@@ -62,7 +63,12 @@ App({
     util.hideLoading()
     this.userInfoReadyCallbacks.forEach(cb => { cb() })
   },
-  userInfoReadyCallbacks:[],
+  userInfoFailCallback: function(){
+    util.hideLoading()
+    this.userInfoFailCallbacks.forEach(cb => { cb() })
+  },
+  userInfoReadyCallbacks: [],
+  userInfoFailCallbacks: [],
   globalData: {
     logined: false,
     userInfo: null

@@ -85,6 +85,7 @@ var basicHttp = (method, requestUrl, data, successCallback, failCallback) => {
       }
     },
     fail: function (err) {
+      console.log(err)
       if (failCallback) failCallback(err);
     }
   })
@@ -113,7 +114,7 @@ module.exports = {
       title: 'Loading',
       icon: 'loading',
       mask: true,
-      duration: 10000
+      duration: 60000
     })
   },
   hideLoading: () => {
