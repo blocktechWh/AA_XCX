@@ -1,5 +1,5 @@
 <view wx:if="{{loaded && items.length>0}}">
-  <view class='card-wrapper' bindtap='switchIndex'>
+  <view class='card-wrapper' bindtouchstart="touchstart" bindtouchend="touchend">
     <view class='flex-h fz-14 top_title'>
       <text class='flex1'>消费明细</text>
       <image class='addIcon' src='/assets/icon/add.png'></image>
