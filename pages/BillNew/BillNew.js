@@ -7,7 +7,6 @@ Page({
     
   },
   onLoad: function (options) {
-    
     util.http_post(url.CreateAction, {}, res => {
       if(res.success){
         this.setData({
@@ -16,6 +15,12 @@ Page({
           title: res.data.title
         })
         this.drawQr()
+      }
+    },err=>{
+      if (err.errMsg){
+        util.showModel('无法创建', err.errMsg, () => {
+          wx.switchTab({ url: '/pages/add/add' })
+        })
       }
     })
   },

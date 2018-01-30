@@ -80,6 +80,8 @@ var basicHttp = (method, requestUrl, data, successCallback, failCallback) => {
         if (successCallback) {
           successCallback(res.data);
         }
+      } else if (parseInt(res.statusCode/100) == 5){
+        if (failCallback) failCallback({ errMsg:'服务器内部错误！' });
       }
     },
     fail: function (err) {
@@ -117,12 +119,17 @@ module.exports = {
   hideLoading: () => {
     wx.hideToast();
   },
-  showModel: (title, content)=>{
+  showModel: (title, content, confirm)=>{
     wx.hideToast();
     wx.showModal({
       title,
       content: typeof (content) === "string" ? content : JSON.stringify(content),
-      showCancel: false
+      showCancel: false,
+      success: function (res) {
+        if (res.confirm) {
+          if (confirm) confirm()
+        }
+      }
     })
   },
   formatTime, diffDate, getTimeString

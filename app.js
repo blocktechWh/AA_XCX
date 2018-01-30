@@ -52,6 +52,8 @@ App({
           wx.setStorageSync('token', res.data.Authorization)
           this.globalData.token = res.data.Authorization
           this.userInfoReadyCallback()
+        },err=>{
+          if(err.errMsg)util.showModel('',err.errMsg)
         })
       }
     })
