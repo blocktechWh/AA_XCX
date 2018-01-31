@@ -69,7 +69,7 @@ page{
   line-height: 40rpx;
 }
 .fz-30{
-  font-size: 60rpx;
+  font-size: 55rpx;
   line-height: 60rpx;
 }
 

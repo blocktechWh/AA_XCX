@@ -24,8 +24,20 @@ Page({
             }
           }
           item.color = ['blue', 'orange', 'green'][item.rid % 3]
+          if (item.amount != 0) {
+            const amountString = item.amount.toString()
+            item.amount = amountString.substring(0, amountString.length - 2) + '.' + amountString.substring(amountString.length - 2, amountString.length)
+          }
         })
-        this.setData({ items, result: res.data.result })
+
+        let result = res.data.result
+        result.forEach(item => {
+          if (item.amount != 0) {
+            const amountString = item.amount.toString()
+            item.amount = amountString.substring(0, amountString.length - 2) + '.' + amountString.substring(amountString.length - 2, amountString.length)
+          }
+        })
+        this.setData({ items, result })
       }
       this.setData({ loaded: true })
     }, err => {

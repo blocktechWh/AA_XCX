@@ -5,6 +5,7 @@ Page({
   data: {
     joiner:[],
     payerIndex:null,
+    amountValue: '',
     payTime: util.formatTime(new Date(),'-')
   },
   onLoad: function (options) {
@@ -23,7 +24,11 @@ Page({
     this.setData({ titleValue: e.detail.value })
   },
   amountInput: function (e) {
-    this.setData({ amountValue: e.detail.value })
+    if (/^\d{1,5}(\.\d{0,2})?$/.test(e.detail.value) || e.detail.value==''){
+      this.setData({ amountValue: e.detail.value })
+    }else{
+      this.setData({ amountValue: this.data.amountValue })
+    }
   },
   onDateChange: function(e){
     this.setData({ payTime: e.detail.value })
@@ -50,7 +55,9 @@ Page({
     joiner.forEach(item=>{
       if (item.joined) joiners.push(item.mebId)
     })
-    joiners.push(joiner[this.data.payerIndex].mebId)
+    if (!joiners.includes(joiner[this.data.payerIndex].mebId)){
+      joiners.push(joiner[this.data.payerIndex].mebId)
+    }
     if (joiners.length <= 0) { util.showModel('', '请选择参与人！'); return; }
     if (!this.data.amountValue) { util.showModel('', '请输入账单金额！'); return; }
     if (!this.data.titleValue) { util.showModel('', '请输入账单项目！'); return; }
@@ -58,7 +65,7 @@ Page({
       actionId: this.data.actionId,
       payer: joiner[this.data.payerIndex].mebId,
       joiners: joiners,
-      amount: this.data.amountValue,
+      amount: this.data.amountValue.replace('.',''),
       payTime: this.data.payTime,
       memo: this.data.titleValue,
     },res=>{

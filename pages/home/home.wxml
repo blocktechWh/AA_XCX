@@ -6,10 +6,19 @@
       <text class='time fz-12'>{{item.createTime}}</text>
       <text class='amount'><text class='fz-20'>¥ </text><text class='fz-30'>{{item.paySum}}</text></text>
       <text class='count fz-15'>（共{{item.itemJoinCount}}人）</text>
+      <canvas class="qrcode {{item.showQrCode?'show':''}}" canvas-id='code{{index}}'></canvas>
+      <view class='qrIcon' catchtap='toggleQr' data-idx="{{index}}">
+        <view class='trangle_wrapper'>
+          <view class='trangle gradient {{item.color}}'></view>
+        </view>
+        <image src='/assets/icon/qr.jpg'></image>
+      </view>
     </view>
     <view class='foot flex-h'>
       <text class='flex1 fz-15'>进行中({{item.code}})</text>
-      <image src='/assets/icon/share.png'></image>
+      <button open-type="share" data-id="{{item.rid}}" catchtap='share'>
+        <image src='/assets/icon/share.png'></image>
+      </button>
     </view>
   </view>
 </view>

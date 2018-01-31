@@ -26,8 +26,7 @@ Page({
   },
   drawQr: function(){
     var size = this.setCanvasSize()
-    const qrdata = this.data.id
-    this.createQrCode(qrdata, "mycanvas", size.w, size.h)
+    this.createQrCode("http://blocktechwh.com/api/shareQr.html?id=" + this.data.id, "mycanvas", size.w, size.h)
   },
   setCanvasSize: function () {
     var size = {};
@@ -52,11 +51,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '加入AA吧',
-      path: '/pages/Join/Join?code='+this.data.code,
-      success: function (res) {
-      },
-      fail: function (res) {
-      }
+      path: '/pages/Join/Join?id='+this.data.id,
     }
   }
 })

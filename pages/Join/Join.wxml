@@ -1,2 +1,1 @@
-<!--pages/Join/Join.wxml-->
-<text>pages/Join/Join.wxml</text>
+<view class='topShadow'></view>

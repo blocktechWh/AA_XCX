@@ -14,7 +14,7 @@
     </view>
     <view class='row flex-h'>
       <text class='title'>金额</text>
-      <input class='flex1' placeholder='请输入活动金额' bindinput='amountInput'></input>
+      <input class='flex1' type="digit" placeholder='请输入活动金额' bindinput='amountInput' value='{{amountValue}}'></input>
     </view>
   </view>
   <view class='card list_card'>
