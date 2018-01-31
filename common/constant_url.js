@@ -8,6 +8,7 @@ module.exports = {
   ActionDetail: host + "/viewAction",
   ActionJoiners: host + "/getJoiners",
   CreateAction: host + "/createAction",
+  JoinAction: host + "/joinAction",
   CreateItem: host + "/createItem",
   UpdateItem: host + "/updateItem",
   DeleteItem: host + "/deleteItem",

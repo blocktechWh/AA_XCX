@@ -3,15 +3,49 @@
     <view class='flex-h fz-14 top_title'>
       <text class='flex1'>消费明细</text>
       <image class='addIcon' src='/assets/icon/add.png'></image>
-      <text>新的明细</text>
+      <text bindtap='toDetailNew'>新的明细</text>
     </view>
-    <view class="card gradient blue {{index==currentIndex?'current':index==currentIndex+1?'next':index==currentIndex-1?'prev':''}}" wx:for="{{items}}" wx:key="{{index}}"></view>
+    <view class="card gradient {{item.color}} {{index==currentIndex?'current':index==currentIndex+1?'next':index==currentIndex-1?'prev':''}}" wx:for="{{items}}" wx:key="{{index}}">
+      <view class='title'>{{item.memo}}</view>
+      <view class='title-underline'></view>
+      <view style='padding:30rpx 30rpx;'>
+        <view class='userPhotos'>
+          <view class='payer-icon flex-h'>
+            <image src='/assets/icon/payer-icon.png'></image>
+          </view>
+          <image class='userPhoto' style='margin-right:30rpx;' src='{{item.payerHead}}'></image>
+          <image class='userPhoto' wx:for="{{item.joiners}}" wx:key="{{index}}" src="{{item.head}}"></image>
+        </view>
+        <view class='flex-h' style='align-items:flex-end;'>
+          <view class='flex-v flex1'  style='align-items:flex-start;'>
+            <text class='time fz-20' style='font-weight:100;'>{{item.createTime}}</text>
+            <text class='count fz-20' style='font-weight:100;'>(共{{item.joinCount}}人)</text>
+          </view>
+          <view>
+            <text class='fz-20'>¥</text><text class='fz-30'>{{item.amount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
   <view class='divider fz-14 flex-h'>
     全部AA结果
   </view>
-  <view>
-  
+  <view class='list-view'>
+    <view class='list-item flex-h result' wx:for="{{result}}" wx:key="{{index}}">
+      <view class='userInfo flex-v'>
+        <image src='{{item.fromHead}}'></image>
+        <text class='fz-12'>{{item.fromName}}</text>
+      </view>
+      <view class='payInfo flex-v'>
+        <text class='fz-15'>应付{{item.amount}}给</text>
+        <image class='arrowPay' src='/assets/icon/arrowPay.png'></image>
+      </view>
+      <view class='userInfo flex-v'>
+        <image src='{{item.toHead}}'></image>
+        <text class='fz-12'>{{item.toName}}</text>
+      </view>
+    </view>
   </view>
 </view>
 

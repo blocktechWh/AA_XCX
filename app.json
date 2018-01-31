@@ -4,6 +4,7 @@
     "pages/Bill/Bill",
     "pages/BillNew/BillNew",
     "pages/DetailNew/DetailNew",
+    "pages/Join/Join",
     "pages/add/add",
     "pages/feedback/feedback",
     "pages/record/record",

@@ -5,16 +5,30 @@ Page({
   data: {
     loaded: false,
     items: [],
+    result: [],
     currentIndex: 0,
   },
   onLoad: function (options) {
     this.setData({ actionId: options.id })
-    util.http_get(url.ActionDetail + '?actionId=' + options.id,res=>{
-      this.setData({ loaded:true })
-      if(res.success){
-        this.setData({ items: res.data.items, result: res.data.result })
+  },
+  onShow: function(){
+    util.http_get(url.ActionDetail + '?actionId=' + this.data.actionId, res => {
+      if (res.success) {
+        let items = res.data.items
+        items.forEach(item=>{
+          item.createTime = util.formatTime(new Date(item.createTime))
+          for (var i = 0; i < item.joiners.length; i++ ){
+            if (item.joiners[i].mebId == item.payer) {
+              item.joiners.splice(i,1)
+              break;
+            }
+          }
+          item.color = ['blue', 'orange', 'green'][item.rid % 3]
+        })
+        this.setData({ items, result: res.data.result })
       }
-    },err=>{
+      this.setData({ loaded: true })
+    }, err => {
 
     })
   },

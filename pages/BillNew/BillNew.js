@@ -46,4 +46,17 @@ Page({
   createQrCode: function (url, canvasId, cavW, cavH) {
     QR.api.draw(url, canvasId, cavW, cavH);
   },
+  share: function(){
+    wx.showShareMenu()
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '加入AA吧',
+      path: '/pages/Join/Join?code='+this.data.code,
+      success: function (res) {
+      },
+      fail: function (res) {
+      }
+    }
+  }
 })

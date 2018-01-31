@@ -20,7 +20,7 @@
   <view class='share_tip'>
     <text class='fz-15'>微信分享</text><text class='fz-13'>先分享在记账哦～</text>
   </view>
-  <button>立即分享</button>
+  <button open-type="share" bindtap='share'>立即分享</button>
 </view>
 
 <view class='topShadow'></view>

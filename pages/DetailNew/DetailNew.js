@@ -4,7 +4,7 @@ const url = require('../../common/constant_url.js')
 Page({
   data: {
     joiner:[],
-    payer:null,
+    payerIndex:null,
     payTime: util.formatTime(new Date(),'-')
   },
   onLoad: function (options) {
@@ -30,39 +30,46 @@ Page({
   },
   toggleJoiner: function(e){
     let joiner = this.data.joiner;
-    const index = e.currentTarget.dataset.index
-    if (joiner[index].mebId == this.data.payer){
+    const index = e.currentTarget.dataset.idx
+    if (index == this.data.payerIndex){
       joiner[index].joined = false
-      this.setData({ joiner, payer:null })
+      this.setData({ joiner, payerIndex:null })
     }else{
       joiner[index].joined = !joiner[index].joined
       this.setData({ joiner })
     }
   },
   selectPayer: function(e){
-    let joiner = this.data.joiner;
-    const index = e.currentTarget.dataset.index
-    this.setData({ payer: joiner[index].mebId })
+    const index = e.currentTarget.dataset.idx
+    this.setData({ payerIndex: index })
   },
   submit:function(){
+    if (this.data.payerIndex == null) { util.showModel('', '请选择垫付人！'); return; }
     let joiner = this.data.joiner;
     let joiners = []
     joiner.forEach(item=>{
       if (item.joined) joiners.push(item.mebId)
     })
+    joiners.push(joiner[this.data.payerIndex].mebId)
     if (joiners.length <= 0) { util.showModel('', '请选择参与人！'); return; }
-    if (!this.data.payer) { util.showModel('', '请选择垫付人！'); return; }
     if (!this.data.amountValue) { util.showModel('', '请输入账单金额！'); return; }
     if (!this.data.titleValue) { util.showModel('', '请输入账单项目！'); return; }
     util.http_post(url.CreateItem,{
       actionId: this.data.actionId,
-      payer: this.data.payer,
+      payer: joiner[this.data.payerIndex].mebId,
       joiners: joiners,
       amount: this.data.amountValue,
       payTime: this.data.payTime,
       memo: this.data.titleValue,
     },res=>{
-
+      if(res.success){
+        util.showSuccess('添加成功！')
+        setTimeout(function(){
+          wx.navigateBack({ url:'/pages/Bill/Bill' })
+        },500)
+      }else{
+        if(res.msg)util.showModel('',res.msg);
+      }
     })
   }
 })

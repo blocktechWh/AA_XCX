@@ -22,7 +22,9 @@
       <text class='title'>参与人（长按可选垫付人）</text>
     </view>
     <view class='userGroup'>
-      <view data-index="{{index}}" wx:for="{{joiner}}" wx:key="{{index}}" class='userButton' bindtap='toggleJoiner' bindlongpress='selectPayer'>
+      <view data-idx="{{index}}" wx:for="{{joiner}}" wx:key="{{index}}" class='userButton' catchtap='toggleJoiner' catchlongpress='selectPayer'>
+        <image class='status' wx:if="{{index==payerIndex}}" src='/assets/icon/payer.png'></image>
+        <image class='status' wx:if="{{index!=payerIndex&&item.joined}}" src="/assets/icon/joiner.png"></image>
         <image class='userPhoto' src='{{item.head}}'></image>
         <text class='userName fz-12'>{{item.name}}</text>
       </view>

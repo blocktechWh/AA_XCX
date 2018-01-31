@@ -7,7 +7,7 @@
   </view>
 </button>
 
-<button class='gradient orange flex-h'>
+<button class='gradient orange flex-h' bindtap='scan'>
   <view class='flex1 icon'>
     <image class='addByQr' src='/assets/icon/addByQr.png'></image>
   </view>

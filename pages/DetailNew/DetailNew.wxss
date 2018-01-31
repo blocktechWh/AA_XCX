@@ -37,12 +37,23 @@ button{
   top: 90rpx;
   bottom:20rpx;
   overflow: scroll;
+  left: 30rpx;
+  right: 0;
 }
 .userButton{
   width: 150rpx;
   height: 180rpx;
   line-height: 0;
   display: inline-block;
+  position: relative;
+}
+.status{
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
 }
 .userPhoto{
   width: 110rpx;
