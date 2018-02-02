@@ -6,6 +6,7 @@ Page({
     joiner:[],
     payerIndex:null,
     amountValue: '',
+    titleValue: '',
     payTime: util.formatTime(new Date(),'-')
   },
   onLoad: function (options) {
@@ -65,7 +66,7 @@ Page({
       actionId: this.data.actionId,
       payer: joiner[this.data.payerIndex].mebId,
       joiners: joiners,
-      amount: this.data.amountValue.replace('.',''),
+      amount: this.data.amountValue.indexOf('.') == -1 ? this.data.amountValue + '00' : /\.\d\d$/.test(this.data.amountValue) ? this.data.amountValue.replace('.', '') : this.data.amountValue.replace('.', '')+'0',
       payTime: this.data.payTime,
       memo: this.data.titleValue,
     },res=>{
@@ -78,5 +79,7 @@ Page({
         if(res.msg)util.showModel('',res.msg);
       }
     })
+    //todo： 清楚表单数据 避免重复点击
+
   }
 })
