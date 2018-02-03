@@ -5,8 +5,10 @@ const app = getApp()
 
 Page({
   data: {
+    showModal: false,
     loaded: false,
-    list: []
+    list: [],
+    nameValue: ''
   },
   onLoad: function (options) {
     const logined = app.globalData.logined
@@ -91,6 +93,40 @@ Page({
         path: '/pages/home/home',
       }
     }
-  }
-  // todo: 长按操作菜单 出浮动层 删除或者改名
+  },
+  operateId: null,
+  operateBill: function(e){
+    this.operateId = e.currentTarget.dataset.id
+    var that = this
+    wx.showActionSheet({
+      itemList: ['修改活动名称', '删除该活动'],
+      success: function (res) {
+        if (res.tapIndex==0){
+          that.renameBill()
+        } else if (res.tapIndex == 1){
+          that.deleteBill()
+        }
+      },
+    })
+  },
+  deleteBill: function () {
+
+  },
+  renameBill: function () {
+    this.setData({ showModal: true })
+  },
+  preventTouchMove: function () { },
+  hideModal: function () {
+    this.setData({ showModal: false })
+  },
+  onCancel: function () {
+    this.hideModal();
+  },
+  inputChange: function (e) {
+    this.setData({ nameValue: e.detail.value })
+  },
+  onConfirm: function () {
+    this.hideModal();
+    console.log(this.data.nameValue)
+  },
 })

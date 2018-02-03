@@ -1,5 +1,5 @@
 <view wx:if="{{loaded && list.length>0}}">
-  <view class='block' wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.rid}}" bindtap='toBill'>
+  <view class='block' wx:for="{{list}}" wx:key="{{index}}" data-id="{{item.rid}}" bindtap='toBill' bindlongpress="operateBill">
     <view class='body gradient {{item.color}}'>
       <text class='title fz-15'>{{item.title}}</text>
       <view class='seperator'></view>
@@ -27,6 +27,20 @@
   <image src='/assets/background/bill_empty.jpg'></image>
   <text class='fz-12'>你还没有参与任何活动噢～</text>
   <button>去添加</button>
+</view>
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">输入活动名称</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入活动号"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
 </view>
 
 <view class='topShadow'></view>

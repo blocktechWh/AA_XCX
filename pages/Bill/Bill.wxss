@@ -134,6 +134,9 @@ page{
   position: absolute;
   top: 0;
 }
+.userPhoto.extra{
+  display: none;
+}
 .userInfo text{
   width: 150rpx;
   height: 30rpx;

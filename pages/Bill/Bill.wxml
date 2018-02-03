@@ -14,12 +14,12 @@
             <image src='/assets/icon/payer-icon.png'></image>
           </view>
           <image class="userPhoto" style='margin-right:30rpx;' src='{{item.payerHead}}'></image>
-          <image class="userPhoto {{item.joiners.length>3&&item.joiners.length<10?'abs':''}}" style="left:{{120+(300/item.joiners.length)*index}}rpx;" wx:for="{{item.joiners}}" wx:key="{{index}}" wx:for-item="joiner" src="{{joiner.head}}"></image>
+          <image class="userPhoto {{item.joiners.length>3&&item.joiners.length<10?'abs':''}} {{index>=9?'extra':''}}" style="left:{{120+(300/item.joiners.length)*index}}rpx;" wx:for="{{item.joiners}}" wx:key="{{index}}" wx:for-item="joiner" src="{{joiner.head}}"></image>
         </view>
         <view class='flex-h' style='align-items:flex-end;'>
           <view class='flex-v flex1'  style='align-items:flex-start;'>
-            <text class='time fz-20' style='font-weight:100;'>{{item.createTime}}</text>
-            <text class='count fz-20' style='font-weight:100;'>(共{{item.joinCount}}人)</text>
+            <text class='time fz-20' style='font-weight:200;'>{{item.createTime}}</text>
+            <text class='count fz-20' style='font-weight:200;'>(共{{item.joinCount}}人)</text>
           </view>
           <view>
             <text class='fz-20'>¥</text><text class='fz-30'>{{item.amount}}</text>
