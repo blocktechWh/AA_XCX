@@ -29,7 +29,7 @@ Page({
       if(res.success){
         let list = res.data
         list.forEach((item, index) => {
-          item.createTime = util.formatTime(new Date(item.createTime))
+          item.createTime = util.formatTime(new Date(item.createTime.replace(/\s/, 'T')))
           item.color = ['blue', 'orange', 'green'][item.rid % 3]
           if (item.paySum != 0) {
             const paySumString = item.paySum.toString()

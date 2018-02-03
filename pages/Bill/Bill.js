@@ -16,7 +16,7 @@ Page({
       if (res.success) {
         let items = res.data.items
         items.forEach(item=>{
-          item.createTime = util.formatTime(new Date(item.createTime))
+          item.createTime = util.formatTime(new Date(item.createTime.replace(/\s/, 'T')))
           for (var i = 0; i < item.joiners.length; i++ ){
             if (item.joiners[i].mebId == item.payer) {
               item.joiners.splice(i,1)
