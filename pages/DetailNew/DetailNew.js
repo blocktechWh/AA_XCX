@@ -79,7 +79,9 @@ Page({
         if(res.msg)util.showModel('',res.msg);
       }
     })
-    //todo： 清楚表单数据 避免重复点击
-
+    this.setData({
+      amountValue: '',
+      titleValue: ''
+    })
   }
 })
