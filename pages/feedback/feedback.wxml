@@ -1,6 +1,6 @@
 <view class='wrapper'>
-  <textarea placeholder='请在此输入您的宝贵意见' class='fz-14'></textarea>
-  <button>提交</button>
+  <textarea placeholder='请在此输入您的宝贵意见' class='fz-14' bindinput='input'></textarea>
+  <button bindtap='submit'>提交</button>
 </view>
 
 <view class='topShadow'></view>

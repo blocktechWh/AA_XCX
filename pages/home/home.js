@@ -99,7 +99,7 @@ Page({
     this.operateId = e.currentTarget.dataset.id
     var that = this
     wx.showActionSheet({
-      itemList: ['修改活动名称', '删除该活动'],
+      itemList: ['修改活动名称'],//['修改活动名称', '删除该活动'],
       success: function (res) {
         if (res.tapIndex==0){
           that.renameBill()
@@ -110,7 +110,19 @@ Page({
     })
   },
   deleteBill: function () {
-
+    var that = this
+    wx.showModal({
+      title: '',
+      content: '确定要删除该账单？',
+      success: function (res) {
+        if (res.confirm) {
+          that.delete_http()
+        }
+      }
+    })
+  },
+  delete_http: function(){
+    util.showLoading();
   },
   renameBill: function () {
     this.setData({ showModal: true })
@@ -127,6 +139,20 @@ Page({
   },
   onConfirm: function () {
     this.hideModal();
-    console.log(this.data.nameValue)
+    if (!this.data.nameValue || !this.operateId){return}
+    util.showLoading();
+    util.http_post(url.SetActionTitle, {
+      actionId: this.operateId,
+      title: this.data.nameValue
+    }, res => {
+      if (res.success) {
+        util.hideLoading()
+        util.showSuccess('修改成功！')
+        this.getData()
+      } else {
+        if (res.msg) util.showModel('', res.msg)
+      }
+    })
+    this.setData({ nameValue: '' })
   },
 })

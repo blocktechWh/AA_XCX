@@ -9,10 +9,10 @@ module.exports = {
   ActionJoiners: host + "/getJoiners",
   CreateAction: host + "/createAction",
   JoinAction: host + "/joinAction",
+  SetActionTitle: host + "/setActionTitle",
   CreateItem: host + "/createItem",
   UpdateItem: host + "/updateItem",
   DeleteItem: host + "/deleteItem",
-  SetActionTitle: host + "/setActionTitle",
 
   AddFeedback: host + "/addFeedback",
   Score: host + "/score",
